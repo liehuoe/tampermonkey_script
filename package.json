@@ -1,0 +1,10 @@
+{
+  "name": "tampermonkey_script",
+  "scripts": {
+    "blogs": "node build.mjs blogs"
+  },
+  "devDependencies": {
+    "esbuild": "*",
+    "prettier": "*"
+  }
+}
