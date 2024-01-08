@@ -22,6 +22,9 @@ const root = {
             func: zhihu.tardis_zm,
           },
         },
+        topic: {
+          func: zhihu.topic,
+        },
       },
     },
     jianshu: {
