@@ -21,7 +21,7 @@ function wenda() {
     document.addEventListener('scroll', (e) => e.stopPropagation(), true);
     watchStyle(() => {
         let el;
-        // 隐藏标题栏, 优化阅读高度
+        // 优化标题栏, 增加阅读高度
         el = GM_addStyle('#sf-header{position:relative !important;}');
         if (!autoWidthDisabled) {
             // 宽屏调整
