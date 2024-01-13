@@ -5,6 +5,7 @@ import { doc360 } from './webs/360doc';
 import { bilibili } from './webs/bilibili';
 import { juejin } from './webs/juejin';
 import { csdn } from './webs/csdn';
+import { segmentfault } from './webs/segmentfault';
 
 const root = {
   com: {
@@ -55,6 +56,14 @@ const root = {
         },
       },
     },
+    segmentfault: {
+      q: {
+        func: segmentfault.wenda,
+      },
+      a: {
+        func: segmentfault.blog,
+      }
+    }
   },
   cn: {
     juejin: {
