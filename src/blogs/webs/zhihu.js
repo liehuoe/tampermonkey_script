@@ -1,7 +1,7 @@
 import { onLoad, watch } from '@/utils/func';
 import { autoWidthDisabled } from '../menu';
 
-export const zhihu = { global, zhuanlan, tardis_zm, question };
+export const zhihu = { global, zhuanlan, tardis_zm, question, topic };
 
 /** 知乎 */
 function global() {
@@ -94,4 +94,15 @@ function question() {
   GM_addStyle('.AppHeader.is-fixed{display:none !important}');
   // 隐藏footer, 优化阅读高度
   GM_addStyle('.RichContent-actions.is-fixed{display:none !important}');
+}
+
+/**
+ * 知乎 话题
+ * https://www.zhihu.com/topic/19574086/intro
+ */
+function topic() {
+  // 宽屏
+  if (!autoWidthDisabled) {
+    GM_addStyle('#root .App-main > div:has(#TopicMain){max-width: calc(100% - 20px) !important;}');
+  }
 }
