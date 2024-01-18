@@ -1,11 +1,14 @@
 import { watchStyle } from "@/utils/func";
 import { autoWidthDisabled } from "../menu";
 
-export const segmentfault = { wenda, blog };
+export const segmentfault = { global, wenda, blog };
 
-function wenda() {
+function global() {
     // 去除滚动时弹出登录弹窗
     document.addEventListener('scroll', (e) => e.stopPropagation(), true);
+}
+
+function wenda() {
     watchStyle(() => {
         let el;
         // 优化标题栏, 增加阅读高度

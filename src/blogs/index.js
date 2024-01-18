@@ -60,6 +60,7 @@ const root = {
       },
     },
     segmentfault: {
+      func: segmentfault.global,
       q: {
         func: segmentfault.wenda,
       },
