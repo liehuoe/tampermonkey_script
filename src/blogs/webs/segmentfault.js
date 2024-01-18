@@ -1,20 +1,7 @@
-import { onLoad, watch } from "@/utils/func";
+import { watchStyle } from "@/utils/func";
 import { autoWidthDisabled } from "../menu";
 
 export const segmentfault = { wenda, blog };
-
-// 网页会做重置 head 节点, 监听节点重新添加
-function watchStyle(addStyle) {
-    /** @type {HTMLStyleElement} */
-    let el = addStyle();
-    if (!el) return;
-
-    const w = watch(() => {
-        if (el.parentElement) return;
-        el = addStyle();
-    }, el.parentElement);
-    onLoad(() => w.disconnect());
-}
 
 function wenda() {
     // 去除滚动时弹出登录弹窗
