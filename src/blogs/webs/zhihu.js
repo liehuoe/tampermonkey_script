@@ -94,6 +94,8 @@ function question() {
   GM_addStyle('.AppHeader.is-fixed{display:none !important}');
   // 隐藏footer, 优化阅读高度
   GM_addStyle('.RichContent-actions.is-fixed{display:none !important}');
+  // 避免拷贝代码时带上作者声明
+  document.addEventListener('copy', (e) => e.stopPropagation(), true);
 }
 
 /**
