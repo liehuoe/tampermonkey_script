@@ -79,9 +79,9 @@ function question() {
   // 宽屏
   if (!autoWidthDisabled) {
     GM_addStyle('.Question-main{width: auto !important;max-width: 100%;}');
-    GM_addStyle('.Question-main > .ListShortcut{flex:1 !important; width:0 !important}');
+    GM_addStyle('.Question-main > .ListShortcut{flex:1 !important; min-width:0 !important; display: flex;}');
     GM_addStyle(
-      '.Question-mainColumn{flex: 1 !important; width:0 !important; margin-right:10px !important}',
+      '.Question-mainColumn{flex: 1 !important; min-width:0 !important; margin-right:10px !important}',
     );
     GM_addStyle('.Question-mainColumn img{width:auto !important}');
     GM_addStyle('.AuthorInfo{max-width: none !important;}');
