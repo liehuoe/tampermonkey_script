@@ -82,7 +82,5 @@
 
 ## 赞助支持
 
-需要个性化定制需求可以通过赞赏码留言
-
 ![微信赞赏码](./images/wechat.jpg)
 ![扫码领红包](./images/alipay.jpg)
