@@ -5,6 +5,8 @@ export const jianshu = { blog };
 
 /** 简书 博客 */
 function blog() {
+  // 去除滚动时弹出安装简书客户端弹窗
+  document.addEventListener('scroll', (e) => e.stopPropagation(), true);
   watchStyle(() => {
     let el;
     // 右边悬浮工具栏
