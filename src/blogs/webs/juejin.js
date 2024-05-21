@@ -28,6 +28,8 @@ function blog() {
     GM_addStyle('.main-container{max-width:unset !important;width:calc(100% - 30px) !important;}');
     GM_addStyle('.main-area{width:calc(100% - 25rem - 20px) !important;}');
   }
+  // 免登录复制
+  document.addEventListener('copy', (e) => e.stopPropagation(), true);
   // 站外直链
   onLoad(() => {
     const root = document.getElementById('article-root');
