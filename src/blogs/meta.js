@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         博客网站的精简和宽屏处理
 // @namespace    https://github.com/liehuoe/tampermonkey_script
-// @version      0.2.5
+// @version      0.2.6
 // @author       liehuoe
 // @description  自用
 // @license      GPLv3

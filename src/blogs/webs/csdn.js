@@ -51,11 +51,7 @@ function blog() {
   GM_addStyle('#content_views pre{user-select:text !important}');
   GM_addStyle('#content_views{user-select:text !important}');
   GM_addStyle('#articleSearchTip{display:none !important}');
-  onLoad(() => {
-    document
-      .querySelectorAll('code')
-      .forEach((el) => el.addEventListener('copy', (e) => e.stopPropagation(), true));
-  });
+  document.addEventListener('copy', (e) => e.stopPropagation(), true);
   // 站外直链
   onLoad(() => {
     document.querySelectorAll('#article_content a:not([href*="csdn.net"])').forEach((el) => {
