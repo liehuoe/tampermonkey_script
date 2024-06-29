@@ -46,6 +46,15 @@ function blog() {
   GM_addStyle('.passport-login-tip-container{display:none !important}');
   // 滚动时弹出登录弹窗
   document.addEventListener('scroll', (e) => e.stopPropagation(), true);
+  // 加载时弹出登录弹窗
+  const el = GM_addStyle('.passport-login-container{display:none !important;}');
+  onLoad(() => {
+    setTimeout(() => {
+      el.remove();
+      const dom = document.querySelector('.passport-login-container');
+      if (dom) dom.remove();
+    }, 1000);
+  });
   // 免登录复制
   GM_addStyle('#content_views pre code{user-select:text !important}');
   GM_addStyle('#content_views pre{user-select:text !important}');

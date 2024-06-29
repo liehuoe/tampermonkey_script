@@ -23,5 +23,5 @@ function blog() {
       'div[role="main"] > div:first-child > section:first-child ~ section{display:none !important;}',
     );
     return el;
-  })
+  });
 }
