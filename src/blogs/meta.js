@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CSDN、知乎、简书浏览体验优化脚本
 // @namespace    https://github.com/liehuoe/tampermonkey_script
-// @version      0.2.7
+// @version      0.2.8
 // @author       liehuoe
 // @description  有BUG或者其他网站想要添加的可以随时联系我
 // @license      GPLv3

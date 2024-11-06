@@ -85,6 +85,8 @@ function question() {
     );
     GM_addStyle('.Question-mainColumn img{width:auto !important}');
     GM_addStyle('.AuthorInfo{max-width: none !important;}');
+    // 评论"查看全部回复"的弹窗
+    GM_addStyle('div[tabindex="0"]:has(.Modal-content){width:calc(100vw - 150px)}');
   }
   // 右边下载知乎客户端
   GM_addStyle('.AppBanner{display: none !important;}');
