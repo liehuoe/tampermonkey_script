@@ -22,6 +22,9 @@ const root = {
           zm: {
             func: zhihu.tardis_zm,
           },
+          bd: {
+            func: zhihu.tardis_zm,
+          },
         },
         topic: {
           func: zhihu.topic,

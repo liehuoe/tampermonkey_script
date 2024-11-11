@@ -61,10 +61,12 @@ function zhuanlan() {
 /**
  * 知乎 文章(有专栏,问答的内容)
  * https://www.zhihu.com/tardis/zm/art/217881116
+ * https://www.zhihu.com/tardis/bd/ans/1575858277
  */
 function tardis_zm() {
   // 上方header不要固定位置
   GM_addStyle('.sgui-header{display:none !important}');
+  GM_addStyle('.Container{margin-top: 0 !important}');
   // 宽屏
   if (!autoWidthDisabled) {
     GM_addStyle('.Container{max-width:unset !important}');
