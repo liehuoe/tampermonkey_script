@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         CSDN、知乎、简书浏览体验优化脚本
 // @namespace    https://github.com/liehuoe/tampermonkey_script
-// @version      0.2.9
+// @version      0.2.10
 // @author       liehuoe
-// @description  有BUG或者其他网站想要添加的可以随时联系我
+// @description  为了查资料时拥有最好的阅读体验，致力于优化所有博客网站的无关元素
 // @license      GPLv3
 // @match        https://*.zhihu.com/*
 // @match        https://*.csdn.net/*

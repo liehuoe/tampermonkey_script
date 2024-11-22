@@ -1,4 +1,4 @@
-import { onLoad } from '@/utils/func';
+import { onLoad, removeAllListeners } from '@/utils/func';
 import { autoWidthDisabled } from '../menu';
 
 export const csdn = { global, blog, wenku };
@@ -63,11 +63,13 @@ function blog() {
   document.addEventListener('copy', (e) => e.stopPropagation(), true);
   // 站外直链
   onLoad(() => {
+    removeAllListeners(document.querySelector('#content_views'));
     document.querySelectorAll('#article_content a:not([href*="csdn.net"])').forEach((el) => {
       el.addEventListener('mouseover', (e) => e.stopPropagation(), true);
       el.addEventListener('click', (e) => e.stopPropagation(), true);
+      if (!el.target) el.target = '_blank';
     });
-  });
+  }, true);
 }
 /** CSDN文库 */
 function wenku() {

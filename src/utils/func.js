@@ -1,9 +1,10 @@
 /**
  * 添加 load 事件处理
  * @param {() => void} func
+ * @param {boolean} capture
  */
-export function onLoad(func) {
-  window.addEventListener('load', func, { once: true });
+export function onLoad(func, capture) {
+  window.addEventListener('load', func, { once: true, capture });
 }
 
 /**
@@ -32,4 +33,12 @@ export function watchStyle(addStyle) {
     el = addStyle();
   }, el.parentElement);
   onLoad(() => w.disconnect());
+}
+
+/**
+ * 清除元素的所有事件监听
+ * @param {Element} e
+ */
+export function removeAllListeners(e) {
+  e.parentNode.replaceChild(e.cloneNode(true), e);
 }
