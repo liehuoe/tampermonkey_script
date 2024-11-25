@@ -60,6 +60,9 @@ const root = {
         read: {
           func: bilibili.blog,
         },
+        opus: {
+          func: bilibili.blog_new,
+        }
       },
     },
     segmentfault: {
