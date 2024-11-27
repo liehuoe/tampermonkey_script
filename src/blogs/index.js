@@ -29,6 +29,9 @@ const root = {
         topic: {
           func: zhihu.topic,
         },
+        column: {
+          func: zhihu.zhuanlan,
+        },
       },
     },
     jianshu: {
