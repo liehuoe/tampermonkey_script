@@ -18,8 +18,8 @@ function global() {
 function blog() {
   // 右上登录提示
   GM_addStyle('#csdn-toolbar-profile-nologin{display:none !important}');
-  // 下方"关注博主即可阅读全文"
-  GM_addStyle('.hide-article-box{display:none !important}');
+  // 下方有"关注博主即可阅读全文"和"付费解锁文章"按钮时展开文章的全部内容
+  GM_addStyle('.hide-article-box{padding-top:0 !important;margin-top:30px !important}');
   GM_addStyle('#article_content{height:auto !important}');
   // 左边侧栏
   GM_addStyle('.main_father .blog_container_aside{display:none !important}');
