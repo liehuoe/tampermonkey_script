@@ -23,7 +23,8 @@ function blog() {
   GM_addStyle('#article_content{height:auto !important}');
   // 左边侧栏
   GM_addStyle('.main_father .blog_container_aside{display:none !important}');
-  GM_addStyle('.main_father #toolBarBox .left-toolbox{left:0 !important; width:100% !important}');
+  // 底栏
+  GM_addStyle('.main_father #toolBarBox .left-toolbox{position:relative !important;left:0 !important; width:100% !important}');
   // 显示右边目录
   GM_addStyle('.main_father #rightAside{display:none !important}');
   GM_addStyle(
