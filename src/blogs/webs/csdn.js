@@ -30,10 +30,12 @@ function blog() {
   // 显示右边目录
   GM_addStyle('.main_father #rightAside{display:none !important}');
   GM_addStyle('.main_father #rightAsideConcision{display:block !important;margin-left:10px !important;}');
-  // 滚动时右侧目录对齐浏览器顶部
+  // 滚动时右边目录对齐浏览器顶部
   GM_addStyle('.main_father{height:auto !important}');
   GM_addStyle('.main_father #rightAsideConcision{height:auto !important}');
   GM_addStyle('.main_father #rightAsideConcision #recommend-right-concision{position:sticky !important;top:10px !important;}');
+  // 调整右边目录内容太多时的高度
+  GM_addStyle('#groupfileConcision > .groupfile-div1{max-height:calc(100vh - 66px) !important}');
   // 宽屏
   if (!autoWidthDisabled) {
     GM_addStyle(
