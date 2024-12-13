@@ -23,13 +23,17 @@ function blog() {
   GM_addStyle('#article_content{height:auto !important}');
   // 左边侧栏
   GM_addStyle('.main_father .blog_container_aside{display:none !important}');
+  // 导航栏
+  GM_addStyle('#csdn-toolbar{position:relative !important}');
   // 底栏
   GM_addStyle('.main_father #toolBarBox .left-toolbox{position:relative !important;left:0 !important; width:100% !important}');
   // 显示右边目录
   GM_addStyle('.main_father #rightAside{display:none !important}');
-  GM_addStyle(
-    '.main_father #rightAsideConcision{display:block !important;margin-left:10px !important;}',
-  );
+  GM_addStyle('.main_father #rightAsideConcision{display:block !important;margin-left:10px !important;}');
+  // 滚动时右侧目录对齐浏览器顶部
+  GM_addStyle('.main_father{height:auto !important}');
+  GM_addStyle('.main_father #rightAsideConcision{height:auto !important}');
+  GM_addStyle('.main_father #rightAsideConcision #recommend-right-concision{position:sticky !important;top:10px !important;}');
   // 宽屏
   if (!autoWidthDisabled) {
     GM_addStyle(
@@ -46,7 +50,11 @@ function blog() {
   // 右下登录弹窗
   GM_addStyle('.passport-login-tip-container{display:none !important}');
   // 滚动时弹出登录弹窗
-  document.addEventListener('scroll', (e) => e.stopPropagation(), true);
+  document.addEventListener('scroll', (e) => {
+    // 判断右侧目录是否存在(登录才有), 右侧目录需要scroll事件进行电梯导航
+    if (document.getElementById("recommend-right-concision")) return; // 不阻止
+    e.stopPropagation();
+  }, true);
   // 加载时弹出登录弹窗
   const el = GM_addStyle('.passport-login-container{display:none !important;}');
   onLoad(() => {
