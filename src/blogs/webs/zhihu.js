@@ -5,6 +5,8 @@ export const zhihu = { global, zhuanlan, tardis_zm, question, topic };
 
 /** 知乎 */
 function global() {
+  // 去除滚动时弹出登录弹窗
+  document.addEventListener('scroll', (e) => e.stopPropagation(), true);
   // 去除中间登录弹窗
   const loginStyle = [
     GM_addStyle('.Modal-wrapper{display:none !important}'),
@@ -15,7 +17,7 @@ function global() {
     loginStyle.forEach((v) => v?.remove());
   });
   // 右上登录弹窗
-  GM_addStyle('div[style*="margin-top: 14px"][style*="position: fixed"]{display:none !important}');
+  GM_addStyle('div[style*="margin-top: 16px"][style*="position: fixed"]{display:none !important}');
   // 右下登录弹窗
   GM_addStyle(
     'div[style*="transform-origin: center bottom"][style*="margin-top: -6px"]{display:none !important}',
