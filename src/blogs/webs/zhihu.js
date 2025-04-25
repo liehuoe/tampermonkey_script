@@ -47,17 +47,8 @@ function zhuanlan() {
   GM_addStyle('.RichContent-actions.is-fixed{display:none !important}');
   // 宽屏
   if (!autoWidthDisabled) {
-    GM_addStyle('.Post-Main{padding: 0 10px !important}');
-    GM_addStyle('.Post-Header{width: auto !important}');
-    GM_addStyle('.Post-RichTextContainer{width: 100% !important;}');
-    GM_addStyle('.Post-RichTextContainer img{width: auto !important;}');
-    GM_addStyle('.Post-RichTextContainer *{box-sizing: border-box !important;}');
-    // 隐藏右边点赞
-    GM_addStyle('.Post-SideActions{display: none !important;}');
-    // 评论
-    GM_addStyle(
-      '.Post-Sub > div{overflow: hidden !important; width: auto !important; margin-left: 10px !important;}',
-    );
+    GM_addStyle('.Post-Row-Content-right{display:none !important}');
+    GM_addStyle('.Post-Row-Content,.Post-Row-Content-left{width:auto !important}');
   }
 }
 /**
