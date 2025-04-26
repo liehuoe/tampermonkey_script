@@ -48,7 +48,7 @@ function zhuanlan() {
   // 宽屏
   if (!autoWidthDisabled) {
     GM_addStyle('.Post-Row-Content-right{display:none !important}');
-    GM_addStyle('.Post-Row-Content,.Post-Row-Content-left{width:auto !important}');
+    GM_addStyle('.Post-Row-Content,.Post-Row-Content-left{width:auto !important;flex:1 !important;}');
   }
 }
 /**
