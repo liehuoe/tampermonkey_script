@@ -14,4 +14,5 @@ await esbuild.build({
   alias: {
     '@': resolve(srcDir),
   },
+  minify: true,
 });

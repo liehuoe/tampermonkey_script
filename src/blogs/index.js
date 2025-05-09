@@ -15,6 +15,18 @@ const root = {
         func: zhihu.zhuanlan,
       },
       www: {
+        leaf: zhihu.home,
+        follow: {
+          leaf: zhihu.home,
+        },
+        hot: {
+          leaf: zhihu.home,
+        },
+        zvideo: {
+          leaf: zhihu.home,
+          func: zhihu.video,
+        },
+
         question: {
           func: zhihu.question,
         },
@@ -31,7 +43,7 @@ const root = {
         },
         column: {
           func: zhihu.zhuanlan,
-        },
+        }
       },
     },
     jianshu: {
@@ -104,14 +116,19 @@ const root = {
  */
 function exec(route, paths) {
   const item = route[paths[0]];
-  const func = route.func;
   paths = paths.slice(1);
   let rc = true;
   if (item) {
-    rc = exec(item, paths) !== false;
+    if (paths.length === 0) {
+      if (item.leaf) {
+        rc = item.leaf() !== false;
+      }
+    } else {
+      rc = exec(item, paths) !== false;
+    }
   }
-  if (rc && func) {
-    rc = func() !== false;
+  if (rc && route.func) {
+    rc = route.func() !== false;
   }
   return rc;
 }
@@ -120,4 +137,4 @@ function exec(route, paths) {
 let paths = unsafeWindow.location.pathname.split('/').slice(1);
 /** @type {string[]} */
 let domains = unsafeWindow.location.hostname.split('.');
-exec(root, [...domains.reverse(), ...paths]);
+exec(root, [...domains.reverse(), ...paths].filter((v) => v));

@@ -1,7 +1,7 @@
 import { onLoad, watch } from '@/utils/func';
 import { autoWidthDisabled } from '../menu';
 
-export const zhihu = { global, zhuanlan, tardis_zm, question, topic };
+export const zhihu = { global, home, video, zhuanlan, tardis_zm, question, topic };
 
 /** 知乎 */
 function global() {
@@ -34,6 +34,21 @@ function global() {
       });
     });
   });
+  if (!autoWidthDisabled) {
+    // 评论"查看全部回复"的弹窗
+    GM_addStyle('div[tabindex="0"]:has(.Modal-content){width:calc(100vw - 150px)}');
+  }
+}
+function home() {
+  if (!autoWidthDisabled) {
+    GM_addStyle('.Topstory-container{width:auto !important}');
+    GM_addStyle('.Topstory-mainColumn{flex:1 !important}');
+  }
+}
+function video() {
+  if (!autoWidthDisabled) {
+    GM_addStyle('.ZVideo{max-width:unset !important}');
+  }
 }
 /**
  * 知乎 专栏
@@ -80,8 +95,6 @@ function question() {
     );
     GM_addStyle('.Question-mainColumn img{width:auto !important}');
     GM_addStyle('.AuthorInfo{max-width: none !important;}');
-    // 评论"查看全部回复"的弹窗
-    GM_addStyle('div[tabindex="0"]:has(.Modal-content){width:calc(100vw - 150px)}');
   }
   // 右边下载知乎客户端
   GM_addStyle('.AppBanner{display: none !important;}');
